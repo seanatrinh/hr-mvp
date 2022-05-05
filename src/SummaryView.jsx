@@ -15,6 +15,7 @@ const Container = styled.div`
 
 function SummaryView({ setAppView, name }) {
   const [leaderboardData, setLeaderboardData] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [statusMessage, setStatusMessage] = useState();
   const [dataStatus, setDataStatus] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
@@ -27,20 +28,6 @@ function SummaryView({ setAppView, name }) {
       })
       .catch(err => console.log(err));
   }, []);
-  // useEffect(() => {
-  //   axios.get('/api/leaderboard')
-  //     .then(res => {
-  //       setLeaderboardData(res.data);
-  //     })
-  //     .then(() => {
-  //       axios.get('/api/status')
-  //         .then(res => {
-  //           setStatusMessage(res.data);
-  //           setDataStatus(true);
-  //         })
-  //     })
-  //     .catch(err => console.log(err));
-  // }, []);
 
   const handleSubmitUpdate = (e) => {
     e.preventDefault();
